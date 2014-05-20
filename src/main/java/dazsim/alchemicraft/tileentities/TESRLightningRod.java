@@ -1,5 +1,7 @@
 package dazsim.alchemicraft.tileentities;
 
+
+
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.entity.Entity;
@@ -7,16 +9,16 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 
-import dazsim.alchemicraft.models.modelPedistal;
+import dazsim.alchemicraft.models.LightningRod;
 
 import org.lwjgl.opengl.GL11;
 
-public class TESRPedistal extends TileEntitySpecialRenderer {
+public class TESRLightningRod extends TileEntitySpecialRenderer {
 
-	private final modelPedistal model;
+	private final LightningRod model;
 
-	public TESRPedistal() {
-		this.model = new modelPedistal();
+	public TESRLightningRod() {
+		this.model = new LightningRod();
 	}
 	
 	private void adjustRoatePivotViaMeta(World world, int x, int y, int z)
@@ -34,7 +36,7 @@ public class TESRPedistal extends TileEntitySpecialRenderer {
 			GL11.glTranslatef((float) x + 0.5F, (float) y -0.6F , (float) z + 0.5F );
 			//GL11.glScalef(-1F,-1F,-1F);
 			//This is the texture of your block. Its pathed to be the same place as your other blocks here.
-			ResourceLocation textures = (new ResourceLocation("alchemicraft:textures/blocks/pedistal.png"));
+			ResourceLocation textures = (new ResourceLocation("alchemicraft:textures/blocks/LightningRod.png"));
 			Minecraft.getMinecraft().renderEngine.bindTexture(textures);
 			//This rotation part is very important
 			
@@ -46,3 +48,4 @@ public class TESRPedistal extends TileEntitySpecialRenderer {
 			GL11.glPopMatrix();
 	}
 }
+

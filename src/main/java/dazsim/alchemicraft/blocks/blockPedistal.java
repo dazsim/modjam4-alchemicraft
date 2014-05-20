@@ -2,18 +2,18 @@ package dazsim.alchemicraft.blocks;
 
 
 
-import net.minecraft.block.Block;
+import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
-import cpw.mods.fml.client.registry.RenderingRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import dazsim.alchemicraft.tileentities.TileEntityPedistal;
 
-public class blockPedistal extends Block{
+public class blockPedistal extends BlockContainer
+{
 	
 	public blockPedistal ()
 	{
@@ -25,7 +25,8 @@ public class blockPedistal extends Block{
 	}
 	
 	@Override public int getRenderType(){
-		return RenderingRegistry.getNextAvailableRenderId();
+		//return RenderingRegistry.getNextAvailableRenderId();
+		return -1;
 	}
 	/*
 	@Override public boolean shouldSideBeRendered(IBlockAccess iblockaccess,int i, int j, int k, int l)
@@ -51,7 +52,7 @@ public class blockPedistal extends Block{
 	}
 	
 	@Override
-	public TileEntity createTileEntity(World world,int i) {
+	public TileEntity createNewTileEntity(World world,int i) {
 		return new TileEntityPedistal();
 	}
 }
